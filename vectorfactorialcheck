@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> a;
+
+int factorial(int n) {  // Fixed function name
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int k = 0;
+    cout << "Enter the number: ";
+    cin >> k;
+
+    for (int i = 0; i <= k; i++) {  // Fixed loop condition
+        if (factorial(i) <= k) {  // Compare factorial(i) with k
+            a.push_back(i);                
+        } 
+    }
+
+    // Print the vector elements
+    cout << "Numbers added to vector: ";
+    for (int i = 0; i < a.size(); i++) {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
